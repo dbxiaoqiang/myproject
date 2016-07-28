@@ -4,5 +4,21 @@
   "ref": "master",
   "path": "typings",
   "bundle": "typings/tsd.d.ts",
-  "installed": {}
+  "installed": {
+    "express/express.d.ts": {
+      "commit": "5979f9f7472d3ab58abd10059aea91531708b75c"
+    },
+    "mime/mime.d.ts": {
+      "commit": "5979f9f7472d3ab58abd10059aea91531708b75c"
+    },
+    "serve-static/serve-static.d.ts": {
+      "commit": "5979f9f7472d3ab58abd10059aea91531708b75c"
+    },
+    "node/node.d.ts": {
+      "commit": "5979f9f7472d3ab58abd10059aea91531708b75c"
+    },
+    "express-serve-static-core/express-serve-static-core.d.ts": {
+      "commit": "5979f9f7472d3ab58abd10059aea91531708b75c"
+    }
+  }
 }
