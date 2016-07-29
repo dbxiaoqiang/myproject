@@ -1,3 +1,4 @@
+///<reference path="../typings/jasmine/jasmine.d.ts" />
 import * as target from '../src/app';
 let supertest = require('supertest');
 describe('this is a test', () => {

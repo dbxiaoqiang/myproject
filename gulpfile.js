@@ -19,8 +19,12 @@ gulp.task('pre test', ['compile'], function () {
         .pipe(istanbul.hookRequire());
 });
 gulp.task('ut test', ['pre test'], function() {
-    return gulp.src('dist/spec/*.js')
+     return gulp.src('dist/spec/*.js')
         .pipe(jasmine())
-        .pipe(istanbul.writeReports());
+        .pipe(istanbul.writeReports())
+        .on('end', function() {
+            process.exit(0);
+        })
+        // .pipe(istanbul.enforceThresholds({ thresholds: { global: 90 } }));
 });
 gulp.task('default', ['ut test']);
