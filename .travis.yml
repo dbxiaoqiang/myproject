@@ -1,6 +1,6 @@
 addons:
     code_climate:
-        repo_token: 394a8b4283c51ed3ffebf827a9db8f9ab4e3d07595aa215d64aedda46fc0f3ee
+        repo_token: abc#394a8b4283c51ed3ffebf827a9db8f9ab4e3d07595aa215d64aedda46fc0f3ee
 language: node_js
 node_js:
     - "5.6"
