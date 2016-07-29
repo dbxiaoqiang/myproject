@@ -3,14 +3,15 @@ var ts = require('gulp-typescript');
 var jasmine = require('gulp-jasmine');
 var istanbul = require('gulp-istanbul');
 gulp.task('compile', function() {
-    return gulp.src('src/**/*.ts')
+    return gulp.src(['**/*.ts','!node_modules/**/*.ts'])
         .pipe(ts({
             module: 'commonjs',
             target: 'es2015',
             noImplicitAny: false,
             sourceMap: false,
-            outDir: 'dist'
-        })); 
+            outDir: 'dist/src'
+        }))
+        .pipe(gulp.dest('dist')); 
 });
 gulp.task('pre test', ['compile'], function () {
     return gulp.src(['dist/src/*.js'])
