@@ -9,7 +9,10 @@ app.listen(8080);
 export function test(value: number) {
     if (value) {
         return ++value;
-    } else {
+    } else if (value === 2) {
+        return value;
+    }
+     else {
         return --value;
     }
 }
