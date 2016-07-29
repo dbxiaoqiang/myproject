@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var ts = require('gulp-typescript');
 var jasmine = require('gulp-jasmine');
+var istanbul = require('gulp-istanbul');
 gulp.task('compile', function() {
     return gulp.src('src/**/*.ts')
         .pipe(ts({
@@ -11,8 +12,14 @@ gulp.task('compile', function() {
             outDir: 'dist'
         })); 
 });
-gulp.task('ut test', ['compile'], function() {
+gulp.task('pre test', ['compile'], function () {
+    return gulp.src(['dist/src/*.js'])
+        .pipe(istanbul())
+        .pipe(istanbul.hookRequire());
+});
+gulp.task('ut test', ['pre test'], function() {
     return gulp.src('dist/spec/*.js')
-        .pipe(jasmine());
+        .pipe(jasmine())
+        .pipe(istanbul.writeReports());
 });
 gulp.task('default', ['ut test']);

@@ -1,7 +1,12 @@
+addons:
+    code_climate:
+        repo_token: 394a8b4283c51ed3ffebf827a9db8f9ab4e3d07595aa215d64aedda46fc0f3ee
 language: node_js
 node_js:
     - "5.6"
 before_script:
-    - npm install -g gulp
+    - npm install -g codeclimate-test-reporter gulp
     - npm install
 script: gulp
+after_script:
+    - codeclimate-test-reporter < coverage\lcov.info
